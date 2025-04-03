@@ -9,16 +9,22 @@
 #include "Prise.h"
 #include "borne.h"
 #include "New_Client.h"
+
+using namespace std;
+
 int main()
 {
-/*
-    LecteurCarte lecteurcarte;
 
-    lecteur_carte_initialiser();
-    Voyants_initialiser();
-    init_generateur_save();
-    prise_initialiser();
-   	Voyants_initialiser();
+    LecteurCarte lecteurcarte;
+    Voyants voyants;
+    GenerateurSave generateursave;
+    Prise prise;
+    NewClient newclient;
+
+    lecteurcarte.initialiser();
+    voyants.Voyants_initialiser();
+    generateursave.init_generateur_save();
+    prise.prise_initialiser();
 
 
     int answer = 0; 
@@ -30,11 +36,11 @@ int main()
 	FILE *fichier = NULL;
 	do
 	{
-		printf("Se connecter en tant que Administrateur ? \n"); 
-		printf("\t 1 pour OUI\n \t 0 pour NON \n");
+        cout<<"se connecter en tant que Administrateur ?"<<endl;
+        cout<<"\t 1 pour OUI\n \t 0 pour NON "<<endl;
 		if(scanf("%d", &answer)!= 1)
 		{
-			printf("erreur saisie\n");
+            cout<<"erreur saisie"<<endl;
 			exit(-1);
 		}
 			
@@ -43,10 +49,10 @@ int main()
 			stateAnswer = VRAI;
 			do
 			{
-				printf("entrez mot de passe ou 0 pour abandonner: \n");
+                cout<<"entrez mot de passe ou 0 pour abandonner: "<<endl;
 				if(scanf("%d",&motDePasse) != 1)
 				{
-					printf("erreur saisie\n");
+                    cout<<"erreur saisie"<<endl;
 					exit(-1);
 				}
 			
@@ -56,30 +62,30 @@ int main()
 					
 					do
 					{
-						printf("Vous voulez ajouter saisir 1 \nOu supprimer saisir 2: \n");
-						printf("Ou 0 pour abandonner: \n");
+                        cout<<"Vous voulez ajouter saisir 1 \nOu supprimer saisir 2: "<<endl;
+                        cout<<"Ou 0 pour abandonner: "<<endl;
 						if(scanf("%d",&choixSupAjoue) != 1)
 						{
-							printf("erreur saisie\n");
+                            cout<<"erreur saisie"<<endl;
 							exit(-1);
 						}
 						
 						if(choixSupAjoue == AJOUE)
 						{
 							stateChoixSupAjoue = VRAI;
-							New_Client_ajouterNumCarte(fichier);
+							newclient.New_Client_ajouterNumCarte(fichier);
 							return 0;
 						}
 						else if(choixSupAjoue == SUPP)
 						{
 							stateChoixSupAjoue = VRAI;
-							New_Client_supprimerNumCarte(fichier);
+							newclient.New_Client_supprimerNumCarte(fichier);
 							return 0;
 						}
 						else if(choixSupAjoue == ABANDONNER)
 						{
 							stateChoixSupAjoue = VRAI;
-							printf("Goooood Bye\n");
+                            cout<<"Goooood Bye"<<endl;
 							return 0;
 						}
 						else
@@ -91,7 +97,7 @@ int main()
 				}
 				else if(motDePasse == ABANDONNER)
 				{
-					printf("Goooood Bye\n");
+                    cout<<"Goooood Bye"<<endl;
 					return 0;
 				}
 				else
@@ -115,7 +121,7 @@ int main()
 
     while (1)
    	{
-    	lecteur_carte_lireCarte();
+    	lecteurcarte.lire_carte();
     }
-*/
+
 }
