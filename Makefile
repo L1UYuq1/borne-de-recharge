@@ -22,7 +22,7 @@ LIBDIRS =
 #dependance librairie libsmartcard_borne (voir git)
 LIBS64 = -lsmartcardcpp_borne_x64 -lpcsclite
 
-SRCS = lecteurcarte.cpp borne.cpp base_clients.cpp boutons.cpp
+SRCS = lecteurcarte.cpp base_clients.cpp boutons.cpp Timer.cpp Prise.cpp New_Client.cpp Generateur_save.cpp Voyants.cpp borne.cpp 
 
 OBJS = ${SRCS:.cpp=.o} 
 

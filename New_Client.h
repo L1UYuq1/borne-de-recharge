@@ -21,7 +21,8 @@
 
 class NewClient
 {
-void New_Client_ajouterNumCarte(FILE *fichier);
-void New_Client_supprimerNumCarte(FILE *fichier);
-}
+    public : 
+        void New_Client_ajouterNumCarte(FILE *fichier);
+        void New_Client_supprimerNumCarte(FILE *fichier);
+};
 #endif

@@ -3,6 +3,8 @@
 #include <donnees_borne.h>
 #include "New_Client.h"
 
+using namespace std;
+
 void NewClient::New_Client_ajouterNumCarte(FILE *fichier)
 {
 	int NumCarte = -99;
@@ -21,7 +23,7 @@ void NewClient::New_Client_ajouterNumCarte(FILE *fichier)
 	
 	if(fichier == NULL)
 	{
-		printf("error fichier \n");
+        cout<<"error fichier"<<endl;
 		exit(-1);
 	}
 	
